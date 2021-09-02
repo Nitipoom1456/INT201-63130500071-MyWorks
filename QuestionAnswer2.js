@@ -106,5 +106,6 @@ function ans(qnum,anum) {
 ans(1,1);
 ans(2,2);
 ans(3,1);
-
+ans(4,1);
+ans(5,2);
 
