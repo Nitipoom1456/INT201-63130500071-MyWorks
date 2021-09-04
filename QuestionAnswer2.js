@@ -1,8 +1,9 @@
+//Object ของแต่ละคำถาม
 let question1 = {
     question: "1+1 = ?",
     answer: `1. 2
-    2. 3`,
-    correctAnswer: 1
+    2. 3`,//คำตอบที่ให้แสดงเฉยๆ
+    correctAnswer: 1 //เอาไว้เช็คตำตอบที่ถูก
 }
 let question2 = {
     question: "1+2 = ?",
@@ -28,18 +29,24 @@ let question5 = {
     2. 5`,
     correctAnswer: 2
 }
+//สร้างผู้เล่น
 let player = {
-    name: "poom",
-    questionNumber: '',
+    name: "poom", 
+    questionNumber: '', 
     answerNumber: '',
-    score: 0
+    score: 0 
 }
+
+
+//เป็นฟังก์ชั่นที่ให้ผู้เล่นใช้ตอบ
 function ans(qnum,anum) {
+    //เช็คค่าที่ใส่มาว่าตรงกับข้อไหน
     if(qnum==1){
         console.log(question1.question);
         console.log(question1.answer);
         console.log(`your answer choice is: ${anum}`);
         player.questionNumber = '1';
+        //เช็คคำตอบ
         if(anum == 1){
             player.answerNumber = '1';
             player.score += 1;
