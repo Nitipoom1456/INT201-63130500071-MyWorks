@@ -1,10 +1,16 @@
 
 import {products} from "./prod2.js";
+import {addProductToCart,numProductInCart,} from "./cart.js";
 
 let outerDiv;
-let num = 0;
+export let divProducts = document.querySelector("#products");
+// export let add2cartbtn = document.createElement("a");
 
-products.forEach(product => {
+displayProduct(products);
+
+export function displayProduct(products) {
+    let num = 0;
+    products.forEach(product => {
     if (num == 0) {
         outerDiv = document.createElement("div");
         outerDiv.setAttribute("class", "row row-cols-2 row-cols-lg-4 g-2 g-lg-3");
@@ -43,14 +49,14 @@ products.forEach(product => {
         add2cartbtn.appendChild(document.createTextNode("Out of stock"))
     } else{
         add2cartbtn.setAttribute("class", "btn btn-primary mw-100");
-        add2cartbtn.setAttribute("href", "https://www.google.com");
-        add2cartbtn.setAttribute("target", "_blank");
+        add2cartbtn.setAttribute("id", product.id);
         add2cartbtn.appendChild(document.createTextNode("Add to cart"));
+        add2cartbtn.addEventListener('click',addProductToCart,false);
     }
     content.appendChild(add2cartbtn);
     innerDiv.appendChild(content);
     outerDiv.appendChild(innerDiv);
-});
-
-document.querySelector("#products").appendChild(outerDiv);
+    divProducts.appendChild(outerDiv);
+    });
+}
 
