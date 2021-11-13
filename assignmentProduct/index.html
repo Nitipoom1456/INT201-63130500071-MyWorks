@@ -14,6 +14,10 @@
     <style>
         body{
             font-family: 'IBM Plex Sans Thai', sans-serif;
+            background-color: #fff;
+        }
+        body.dark {
+            background-color: #2C272E;
         }
         h5{
             font-weight: bolder;
@@ -23,6 +27,12 @@
         }
         #searchBar:hover{
             box-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px dimgray;
+        }
+        .dark p {
+            color: #FFFFFF;
+        }
+        .dark span{
+            color: #FFFFFF;
         }
     </style>
 </head>
@@ -63,6 +73,8 @@
                 </p>
             </div> -->
         </div>
+        <button class="theme1">Default</button>
+        <button class="theme2">Dark</button>
     </nav>
 
     <div id="products">
@@ -71,5 +83,6 @@
     <script src="./script.js" type="module"></script>
     <script src="./search.js" type="module"></script>
     <script src="./cart.js" type="module"></script>
+    <script src="./theme.js" type="module"></script>
 </body>
 </html>
